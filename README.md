@@ -3,7 +3,7 @@ Thank you for your interest in joining the CDx engineering team!
 
 This document is a quick test designed to evaluate your coding and problem solving skills with dApp development. It’s designed to be straightforward and shouldn't take longer than 3 hours. 
 
-If you're selected to join our team, a primary task will be building JavaScript/Typescript-based app/library development and integrating with Solidity contracts. To imitate this, we've created a task that represents the tooling you'll be working with on a daily basis. 
+If you're selected to join our team, a primary task will be JavaScript/Typescript-based app/library development and integrating with Solidity contracts. To imitate this, we've created a task that represents the tooling you'll be working with on a daily basis. 
 
 ## Background
 "Blind" voting on a public blockchain takes some thought. All data is public so it's easy to see who voted and what their vote was. This can bias voters, encourage herd mentality, and lead to suboptimal decisions.
@@ -12,7 +12,7 @@ One way to mitigate this is to use a "commit-reveal" scheme. In such a scheme, v
 
 After the "commit period", voters can reveal their vote by supplying `(x + secret)`, and their `Hash(x + secret)`. This would be `"0~mysuperbigsecret"` and `"Hash(0~mysuperbigsecret)"` respectively, in this case. Using the fact that hash collisions are impossible using a cryptographic hash function, we can cryptographically prove that a user committed to a particular vote by computing the hash of `(x + secret)` and comparing it with the supplied commitment. 
 
-Using this technique, it's now impossible to know voting results until the reveal period, maintaining privacy. However, once the votes are revealed, each vote is cryptographically proven, eliminating vote manipulation or bias. Overall vote effectiveness is improved by using a commit-reveal scheme instead of public voting. 
+Using this technique, privacy is maintained during the commit period so it is impossible to know voting results until they are revealed. However, once the votes are revealed they are proven using cryptography. Overall vote effectiveness is improved by using a commit-reveal scheme instead of public voting. 
 
 ## The task
 
