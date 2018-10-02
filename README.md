@@ -24,7 +24,7 @@ The Solidity implementation we wrote is very simple: it has only two choices, "Y
 
 Using any framework you'd like, please make a CLI that interacts with the contract. Here are the functional requirements and also some clarification on things you do NOT have to do:
 
-Functionality:
+### Functional requirements
 
 During the commit phase
 - A user should be able to see the two choices they can vote for, "YES" and "NO", 
@@ -44,13 +44,13 @@ During the reveal phase
     - The winner of the vote
 - A user should be able to reveal votes if they are in the reveal period
 
-Things you don't have to do:
+You can use as many or as few commands as you would like to achieve the above functionality. For interacting with the contracts, you can use `ethers.js`, `web3`, or the native truffle contract wrappers. Up to you.
+
+### Things you don't have to do
 - Publish this as an NPM package
 - Write any further tests for the contracts or exhaustive tests for your CLI. The CLI just needs to work.
 - Add any functionality for "switching" between accounts. A user can vote multiple times and that is totally fine. 
 - Deploy this on any public blockchain. Use a local blockchain such as `ganache-cli`.
-
-For interacting with the contracts, you can use `ethers.js`, `web3`, or the native truffle contract wrappers. Up to you. You can make as many commands as you wish. 
 
 ## Setup
 First, install the dependencies. You'll need a local Ethereum blockchain to deploy the contracts and run the contract tests if you want. We recommend `ganache`. You can install ganache with 
