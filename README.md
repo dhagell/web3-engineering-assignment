@@ -1,18 +1,18 @@
 # Full-stack Web3 Engineering Assignment
 Thank you for your interest in joining the CDx engineering team!
 
-This document is just a quick test to see where your coding and problem solving skills are with something related to dApp development. It’s designed to be straightforward and not take too much of your time. 
+This document is a quick test designed to evaluate your coding and problem solving skills with dApp development. It’s designed to be straightforward and shouldn't take longer than 3 hours. 
 
-Since a lot of this position will be JavaScript/Typescript-based app/library development and integrating with Solidity contracts, we've created a task that, in some capacity, represents the tooling you'll be working with on a day-to-day basis with us. 
+If you're selected to join our team, a primary task will be JavaScript/Typescript-based app/library development and integrating with Solidity contracts. To imitate this, we've created a task that represents the tooling you'll be working with on a daily basis. 
 
 ## Background
-"Blind" voting on a public blockchain takes some thought. All data is public so without any extra tricks it's trivial to see who voted what and which side is likely to win. This can greatly bias voters and lead to inefficient decisions. 
+"Blind" voting on a public blockchain takes some thought. All data is public so it's easy to see who voted and what their vote was. This can bias voters, encourage herd mentality, and lead to suboptimal decisions.
 
-One way to mitigate this is to use a "commit-reveal" scheme. In such a scheme, eligible voters commit `Hash(x + secret)` in some "commit period" where `x` is their vote choice. For simplicitly, suppose `x` is either 0 or 1 and the `"+"` operator means concatenation. So for example, a user might commit a vote `"Hash(0~mysuperbigsecret)"`. We call this the "commitment". 
+One way to mitigate this is to use a "commit-reveal" scheme. In such a scheme, voters commit `Hash(x + secret)` in some "commit period" where `x` is their vote choice. For simplicitly, suppose `x` is either 0 or 1 and the `"+"` operator means concatenation. So for example, a user might commit a vote `"Hash(0~mysuperbigsecret)"`. We call this the "commitment". 
 
 After the "commit period", voters can reveal their vote by supplying `(x + secret)`, and their `Hash(x + secret)`. This would be `"0~mysuperbigsecret"` and `"Hash(0~mysuperbigsecret)"` respectively, in this case. Using the fact that hash collisions are impossible using a cryptographic hash function, we can cryptographically prove that a user committed to a particular vote by computing the hash of `(x + secret)` and comparing it with the supplied commitment. 
 
-Using this technique, it's now impossible to know what a given user committed to before the revealing period unless they told you their secret beforehand, grealty improving the effectiveness of the vote. 
+Using this technique, privacy is maintained during the commit period so it is impossible to know voting results until they are revealed. However, once the votes are revealed they are proven using cryptography. Overall vote effectiveness is improved by using a commit-reveal scheme instead of public voting. 
 
 ## The task
 
@@ -25,14 +25,23 @@ The Solidity implementation we wrote is very simple: it has only two choices, "Y
 Using any framework you'd like, please make a CLI that interacts with the contract. Here are the functional requirements and also some clarification on things you do NOT have to do:
 
 Functionality:
+
+During the commit phase
 - A user should be able to see the two choices they can vote for, "YES" and "NO", 
-- A user should be able to see the current status of the vote including:
+- A user should be able to see the status of the vote including:
     - Approximate time left until the commit phase is over
-    - The current vote distribution
     - The current status of the vote (voting/revealing/revealed)
     - The number of votes cast
     - The winner of the vote, if any yet
 - A user should be able to commit votes if they are in the commit period
+    
+    
+During the reveal phase
+- A user should be able to see the status of the vote including:
+    - The vote distribution
+    - The current status of the vote (voting/revealing/revealed)
+    - The number of votes cast
+    - The winner of the vote
 - A user should be able to reveal votes if they are in the reveal period
 
 Things you don't have to do:
