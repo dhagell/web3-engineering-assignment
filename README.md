@@ -12,7 +12,7 @@ One way to mitigate this is to use a "commit-reveal" scheme. In such a scheme, v
 
 After the "commit period", voters can reveal their vote by supplying `(x + secret)`, and their `Hash(x + secret)`. This would be `"0~mysuperbigsecret"` and `"Hash(0~mysuperbigsecret)"` respectively, in this case. Using the fact that hash collisions are impossible using a cryptographic hash function, we can cryptographically prove that a user committed to a particular vote by computing the hash of `(x + secret)` and comparing it with the supplied commitment. 
 
-Using this technique, it's now impossible to know who has voted and what their vote was immediately after the vote is cast, maintaining privacy. However, once the votes are revealed after the commit period, each vote is cryptographically proven, eliminating vote manipulation or fraud. Unless a given user told you their vote beforehand, it's impossible to estimate results until all votes are cast, improving the effectiveness of the vote. 
+Using this technique, it's now impossible to know voting results until the reveal period, maintaining privacy. However, once the votes are revealed, each vote is cryptographically proven, eliminating vote manipulation or bias. Overall vote effectiveness is improved by using a commit-reveal scheme instead of public voting. 
 
 ## The task
 
