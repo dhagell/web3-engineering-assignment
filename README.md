@@ -1,9 +1,10 @@
 # My Solution
 SETUP--
+```
 npm install
 mkdir keystore
 npm install ts-node typescript
-
+```
 
 # Full-stack Web3 Engineering Assignment
 Thank you for your interest in joining the CDx engineering team!
