@@ -3,7 +3,8 @@ SETUP--
 ```
 npm install
 mkdir keystore
-npm install ts-node typescript
+npm install -D ts-node
+npm install -D typescript
 ```
 
 # Full-stack Web3 Engineering Assignment
