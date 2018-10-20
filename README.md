@@ -5,6 +5,7 @@ npm install
 mkdir keystore
 npm install -D ts-node
 npm install -D typescript
+npm install -D onchange
 ```
 
 # Full-stack Web3 Engineering Assignment
@@ -60,6 +61,9 @@ You can use as many or as few commands as you would like to achieve the above fu
 - Write any further tests for the contracts or exhaustive tests for your CLI. The CLI just needs to work.
 - Add any functionality for "switching" between accounts. A user can vote multiple times and that is totally fine. 
 - Deploy this on any public blockchain. Use a local blockchain such as `ganache-cli`.
+
+### Things you don't have to do (But did anyways :)
+- Deploy this to Ropsten testnet.  Allow for easy creation of multiple CommitReveal voting topics with a registry.
 
 ## Setup
 First, install the dependencies. You'll need a local Ethereum blockchain to deploy the contracts and run the contract tests if you want. We recommend `ganache`. You can install ganache with 
