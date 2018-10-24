@@ -7,6 +7,12 @@ npm install -D ts-node
 npm install -D typescript
 npm install -D onchange
 ```
+References:
+https://emn178.github.io/online-tools/keccak_256.html
+
+Description:
+Provide a js proxy object for a particular smartcontract, which will federate the smartcontract abi into js functions.
+Use the smartcontract context in a command line environment, augmented by web3 context.
 
 # Full-stack Web3 Engineering Assignment
 Thank you for your interest in joining the CDx engineering team!
