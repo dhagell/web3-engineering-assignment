@@ -3,9 +3,7 @@ SETUP--
 ```
 npm install
 mkdir keystore
-npm install -D ts-node
-npm install -D typescript
-npm install -D onchange
+npm install -D web3 ethereumjs-tx promise
 ```
 References:
 https://emn178.github.io/online-tools/keccak_256.html
@@ -56,6 +54,46 @@ cdxCLI$ info
   votesForChoice1: '1',
   votesForChoice2: '1',
   voteStatuses: [ 'Revealed', 'Revealed' ] }
+cdxCLI$
+```
+
+RUNTEST--
+```
+node votingCLI.js
+cdxCLI$ status
+cdxCLI$ [ 'YES',
+  'NO',
+  '1542133138',
+  [ '0xa990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff',
+    '0xa9a2715ccf8c8bfcd0c6607823cebdb6f54c3e30dafa3a28cbd3c005327b8b58' ],
+  'It was a tie!',
+  '2',
+  '1',
+  '1' ]
+cdxCLI$ info
+{ choice1: 'YES',
+  choice2: 'NO',
+  commitPhaseEndTime: 1542133138000,
+  commitPhaseTimeRemaining: -93.34,
+  getVoteCommitsArray:
+   [ '0xa990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff',
+     '0xa9a2715ccf8c8bfcd0c6607823cebdb6f54c3e30dafa3a28cbd3c005327b8b58' ],
+  getWinner: 'It was a tie!',
+  numberOfVotesCast: '2',
+  voteCommits:
+   [ '0xa990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff',
+     '0xa9a2715ccf8c8bfcd0c6607823cebdb6f54c3e30dafa3a28cbd3c005327b8b58' ],
+  votesForChoice1: '1',
+  votesForChoice2: '1',
+  voteStatuses: [ 'Revealed', 'Revealed' ] }
+
+cdxCLI$ commit 1-supersecurepassword
+voteHash: 0xa990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff
+encodedFunc: 0x3e858923a990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff
+cdxCLI$
+cdxCLI$ reveal 1-supersecurepassword
+voteHash: 0xa990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff
+encodedFunc: 0x0bbfc2060000000000000000000000000000000000000000000000000000000000000040a990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff0000000000000000000000000000000000000000000000000000000000000015312d737570657273656375726570617373776f72640000000000000000000000
 cdxCLI$
 ```
 
