@@ -11,8 +11,53 @@ References:
 https://emn178.github.io/online-tools/keccak_256.html
 
 Description:
-Provide a js proxy object for a particular smartcontract, which will federate the smartcontract abi into js functions.
-Use the smartcontract context in a command line environment, augmented by web3 context.
+```
+/***
+ *         _ _|_ o ._   _     _  _  ._   _  _  |  _
+ *     \/ (_) |_ | | | (_|   (_ (_) | | _> (_) | (/_
+ *                      _|
+ * on Ropsten                VOTING CONSOLE CLI v0.4
+ */ 0x3F5E2E0AFc79812FfC67CaD52C937cE9F1549566
+cdxCLI$
+Balance: 2469625480000000000
+ropsten
+cdxCLI$
+cdxCLI$
+cdxCLI$
+cdxCLI$ status
+cdxCLI$ [ 'YES',
+  'NO',
+  '1542133138',
+  [ '0xa990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff',
+    '0xa9a2715ccf8c8bfcd0c6607823cebdb6f54c3e30dafa3a28cbd3c005327b8b58' ],
+  'It was a tie!',
+  '2',
+  '1',
+  '1' ]
+{ voteCommits: [] }
+{ voteStatuses: [] }
+0xa9a2715ccf8c8bfcd0c6607823cebdb6f54c3e30dafa3a28cbd3c005327b8b58
+0xa990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff
+Revealed
+Revealed
+cdxCLI$ info
+{ choice1: 'YES',
+  choice2: 'NO',
+  commitPhaseEndTime: 1542133138000,
+  commitPhaseTimeRemaining: -84.59,
+  getVoteCommitsArray:
+   [ '0xa990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff',
+     '0xa9a2715ccf8c8bfcd0c6607823cebdb6f54c3e30dafa3a28cbd3c005327b8b58' ],
+  getWinner: 'It was a tie!',
+  numberOfVotesCast: '2',
+  voteCommits:
+   [ '0xa990fb3c293450ee621886a0e0d648d1d08ef0ed2385e9cfe4a55f3d9f0660ff',
+     '0xa9a2715ccf8c8bfcd0c6607823cebdb6f54c3e30dafa3a28cbd3c005327b8b58' ],
+  votesForChoice1: '1',
+  votesForChoice2: '1',
+  voteStatuses: [ 'Revealed', 'Revealed' ] }
+cdxCLI$
+```
 
 # Full-stack Web3 Engineering Assignment
 Thank you for your interest in joining the CDx engineering team!
